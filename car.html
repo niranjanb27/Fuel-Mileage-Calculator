@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mileage Calculator</title>
+  <script src="car.js" defer></script>
+  <style>
+    body {
+      background-color: green;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+    }
+
+    .calculator {
+      background-color: aqua;
+      color: brown;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    p {
+      margin: 10px 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 10px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+      background-color: brown;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    #output, #out {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+
+    spam {
+      color: red;
+      font-size: 12px;
+    }
+
+    @media (max-width: 600px) {
+      .calculator {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mileage Calculator</h1>
+  <div class="container">
+    <div class="calculator">
+      <p>Enter the distance to travel (in km):<br>
+        <input type="text" id="dis">
+        <br><spam id="dis_error"></spam>
+      </p>
+
+      <p>Enter the amount of fuel required (in Rs.):<br>
+        <input type="text" id="fuel">
+        <br><spam id="fuel_error"></spam>
+      </p>
+
+      <p>Enter the Fuel rate:<br>
+        <input type="text" id="rate">
+        <br><spam id="rate_error"></spam>
+      </p>
+
+      <button id="mil">Calculate Mileage</button>
+      <p id="output"></p>
+    </div>
+
+    <div class="calculator">
+      <p>Enter the distance to travel (in km):<br>
+        <input type="text" id="dist">
+        <br><spam id="dist_error"></spam>
+      </p>
+
+      <p>Mileage of Vehicle:<br>
+        <input type="text" id="mileage">
+        <br><spam id="mileage_error"></spam>
+        <h5>(Taking fuel rate as Rs 105)</h5>
+      </p>
+
+      <button id="amt">Calculate amount of fuel</button>
+      <p id="out"></p>
+    </div>
+  </div>
+</body>
+</html>
