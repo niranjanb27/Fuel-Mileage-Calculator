@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DriveWise</title>
+  <script src="car.js" defer></script>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://img.freepik.com/free-photo/top-view-calculator-notebook-frame_23-2149103980.jpghttps://img.freepik.com/free-photo/luxurious-car-parked-highway-with-illuminated-headlight-sunset_181624-60607.jpg') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;
+    }
+
+    /* Overlay to darken background for readability */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 60px;
+      padding: 40px 20px;
+    }
+
+    .calculator {
+      background-color: #ffffffcc; /* translucent white */
+      color: #1f2937;
+      padding: 24px;
+      border-radius: 12px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: Black;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 12px 0;
+      color: #4b5563;
+      font-size: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 14px;
+    }
+
+    input:focus {
+      border-color: lightgray;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(5, 5, 5, 0.3);
+    }
+
+    button {
+      background-color: black;
+      color: #ffffff;
+      padding: 10px 16px;
+      margin-top: 16px;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: grey;
+    }
+
+    #output, #out {
+      margin-top: 14px;
+      font-weight: bold;
+      color: #1f2937;
+    }
+
+    span {
+      color: #dc2626;
+      font-size: 13px;
+    }
+
+    h5 {
+      margin-top: 6px;
+      color: #64748b;
+      font-weight: normal;
+    }
+
+    @media (max-width: 600px) {
+      .calculator {
+        max-width: 100%;
+      }
+
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Mileage Calculator -->
+    <div class="calculator">
+      <h1>Mileage Estimator</h1>
+      <p>Enter the total distance travelled (in km):
+        <input type="text" id="dis">
+        <br><span id="dis_error"></span>
+      </p>
+
+      <p>Enter the amount of fuel required (in Rs.):
+        <input type="text" id="fuel">
+        <br><span id="fuel_error"></span>
+      </p>
+
+      <p>Enter the Fuel rate:
+        <input type="text" id="rate">
+        <br><span id="rate_error"></span>
+      </p>
+
+      <button id="mil">Calculate Mileage</button>
+      <p id="output"></p>
+    </div>
+
+    <!-- Fuel Calculator -->
+    <div class="calculator">
+      <h1>Fuel Estimator</h1>
+      <p>Enter the distance to travel (in km):
+        <input type="text" id="dist">
+        <br><span id="dist_error"></span>
+      </p>
+
+      <p>Mileage of Vehicle:
+        <input type="text" id="mileage">
+        <br><span id="mileage_error"></span>
+      </p>
+
+      <p>Enter the Fuel rate:
+        <input type="text" id="rt">
+        <br><span id="rt_error"></span>
+      </p>
+
+      <button id="amt">Calculate amount of fuel</button>
+      <p id="out"></p>
+    </div>
+    
+  </div>
+</body>
+</html>
