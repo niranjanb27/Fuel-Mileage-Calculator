@@ -1,9 +1,9 @@
 let butt=document.getElementById('mil');//This line selects the "Calculate Mileage" button by its ID (mil) and stores it in the variable butt.
 butt.addEventListener('click',()=>{ //When the button is clicked, the code inside the arrow function ()=>{} will run.
     //reads the user inputs, parseInt() to convert the input values (which are strings by default) into numbers.
-    const dis=parseInt(document.getElementById('dis').value);
-    const fuel=parseInt(document.getElementById('fuel').value);
-    const rate=parseInt(document.getElementById('rate').value);
+    const dis=parseFloat(document.getElementById('dis').value);
+    const fuel=parseFloat(document.getElementById('fuel').value);
+    const rate=parseFloat(document.getElementById('rate').value);
     const result=document.getElementById('output'); //where actual mileage will get stored
     let dis_status=false,fuel_status=false;
 
@@ -34,8 +34,9 @@ butt.addEventListener('click',()=>{ //When the button is clicked, the code insid
  
 let but=document.getElementById('amt');
 but.addEventListener('click',()=>{
-    const dist=parseInt(document.getElementById('dist').value);
-    const mileage=parseInt(document.getElementById('mileage').value);
+    const dist=parseFloat(document.getElementById('dist').value);
+    const mileage=parseFloat(document.getElementById('mileage').value);
+    const rt=parseFloat(document.getElementById('rt').value);
     const res=document.getElementById('out');
     let dist_status=false,mileage_status=false;
 
@@ -54,7 +55,7 @@ but.addEventListener('click',()=>{
         }
 
     if(dist_status && mileage_status){
-        const amt=((dist*105)/mileage).toFixed(2);
+        const amt=((dist*rt)/mileage).toFixed(2);
         res.innerHTML='Fuel required is Rs. '+amt  ;
     }
     
